@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  todo-api-quarkus
+  namespace: philipp-ci
+spec:
+  paused: true
+  selector:
+    matchLabels:
+      app: api-quarkus
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: api-quarkus
+    spec:
+      serviceAccountName: todo-api-quarkus
+      containers:
+        - name: httpd
+          image: todo-api-quarkus:latest
+          ports:
+            - containerPort: 8080
+              name: http
