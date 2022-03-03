@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-api-quarkus
+  namespace: philipp-ci
+data:
+  app.stage-name: okd-cluster

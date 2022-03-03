@@ -19,5 +19,11 @@ spec:
         - name: httpd
           image: todo-api-quarkus:latest
           ports:
-            - containerPort: 8080
-              name: http
+          - containerPort: 8080
+            name: http
+          env:
+          - name: APP_STAGE_NAME
+            valueFrom:
+              configMapKeyRef:
+                key: app.stage-name
+                name: todo-api-quarkus

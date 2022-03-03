@@ -4,9 +4,12 @@ metadata:
   name: todo-api-quarkus
   namespace: philipp-ci
 spec:
+  tls:
+    termination: Edge
   path: /
   to:
     kind: Service
     name: todo-api-quarkus
   port:
     targetPort: http
+  wildcardPolicy: None

@@ -4,6 +4,7 @@ metadata:
   name: todo-api-quarkus
   namespace: philipp-ci
 spec:
+  type: ClusterIP
   selector:
     app: api-quarkus
   ports:
